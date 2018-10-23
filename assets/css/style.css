@@ -1,3 +1,45 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    background-image: url("../images/digital-pattern-background.jpg");
+}
+
+#crystalCollectorColor {
+    background-color: #cc6e36;
+    /* crystals*/
+}
+
+#instructionBox {
+    background-color: #fbe6ce;
+    color: #20a395;
+    /* number box */
+}
+
+#winBoxColor {
+    background-color: #3bfefe;
+    margin-top: 10px;
+    /* win box */
+}
+
+#currentScoreColor {
+    margin-top: 10px;
+    background-color: #53c985;
+    /* current score */
+}
+
+.statusColor {
+    background-color: #1fa395;
+    margin-bottom: 20px;
+    /* current score */
+}
+
+random_thing {
+    background-color: #cc6e36;
+    background-color: #20a395;
+    background-color: #fbe6ce;
+    background-color: #53c985;
+    background-color: #3bfefe;
+    background-color: #1fa395;
+}
