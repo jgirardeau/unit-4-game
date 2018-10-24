@@ -35,7 +35,7 @@
         </div>
         <div class="row">
             <div class="col-md-3" id="currentScoreColor">
-                <p>39</p>
+                <p></p>
             </div>
             <div class="col-md-2" id="winBoxColor">
                 <p>Wins: 0</p>
@@ -82,8 +82,19 @@
             return Math.floor(Math.random() * (max - 1)) + 1;
         }
 
+        function init_game() {
+            computerGuess = make_random(102) + 19;
+            gem1 = make_random(12);
+            gem1 = make_random(12);
+            gem1 = make_random(12);
+            gem1 = make_random(12);
+
+        }
+
         $("#gem1").click(function() {
-            alert("gem1");
+            if (totalPoints == 0) {
+                init_game();
+            }
         });
         $("#gem2").click(function() {
             alert("gem2");
