@@ -45,10 +45,10 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <img src="assets/images/gem1.jpg" width=95px height=100px>
-                <img src="assets/images/gem2.jpg" width=95px height=100px>
-                <img src="assets/images/gem3.jpg" width=95px height=100px>
-                <img src="assets/images/gem4.jpg" width=95px height=100px>
+                <img src="assets/images/gem1.jpg" width=95px height=100px id="gem1">
+                <img src="assets/images/gem2.jpg" width=95px height=100px id="gem2">
+                <img src="assets/images/gem3.jpg" width=95px height=100px id="gem3">
+                <img src="assets/images/gem4.jpg" width=95px height=100px id="gem4">
             </div>
         </div>
         <div class="row">
@@ -66,11 +66,20 @@
     </div>
 
     <script>
+        //  variable
+        var wins = 0;
+        var losses = 0;
+        var totalPoints = 0;
+        var computerGuess;
+        var gem1;
+        var gem2;
+        var gem3;
+        var gem4;
+
         // generate random between 1 and max
         function make_random(max) {
             return Math.floor(Math.random() * (max - 1)) + 1;
         }
-        console.log(make_random(8));
     </script>
 </body>
 
