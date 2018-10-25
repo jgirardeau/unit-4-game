@@ -38,8 +38,8 @@
                 <h1 id="currentNumber"></h1>
             </div>
             <div class="col-md-2" id="winBoxColor">
-                <p>Wins: 0</p>
-                <p>Losses: 0 </p>
+                <h1 id="wins">Wins: 0</h1>
+                <h1 id="losses">Losses: 0 </h1>
             </div>
             <div class="col-md-7">
             </div>
@@ -89,6 +89,20 @@
             }
             // increment points
             totalPoints += gem[indx];
+
+            // check to end game.
+            if (totalPoints >= computerGuess) {
+                if (totalPoints === computerGuess) {
+                    wins++;
+                    $("#wins").text("Wins: " + wins);
+                    $("#currentNumber").text("YOU WIN!");
+                } else {
+                    losses++;
+                    $("#losses").text("Losses: " + losses);
+                    $("#currentNumber").text("  ");
+                }
+                totalPoints = 0;
+            }
             $("#yourScore").text(totalPoints);
         }
 
