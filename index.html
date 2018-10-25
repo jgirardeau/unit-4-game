@@ -46,10 +46,10 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <img src="assets/images/gem1.jpg" width=95px height=100px id="gem1">
-                <img src="assets/images/gem2.jpg" width=95px height=100px id="gem2">
-                <img src="assets/images/gem3.jpg" width=95px height=100px id="gem3">
-                <img src="assets/images/gem4.jpg" width=95px height=100px id="gem4">
+                <img src="assets/images/gem1.jpg" width=95px height=100px id="gem1" class="gemButton" buttonValue="0">
+                <img src="assets/images/gem2.jpg" width=95px height=100px id="gem2" class="gemButton" buttonValue="1">
+                <img src="assets/images/gem3.jpg" width=95px height=100px id="gem3" class="gemButton" buttonValue="2">
+                <img src="assets/images/gem4.jpg" width=95px height=100px id="gem4" class="gemButton" buttonValue="3">
             </div>
         </div>
         <div class="row">
@@ -80,6 +80,7 @@
         }
 
         function run_game(indx) {
+            console.log("index " + indx);
             // start game
             if (totalPoints == 0) {
                 computerGuess = make_random(102) + 18;
@@ -99,24 +100,15 @@
                 } else {
                     losses++;
                     $("#losses").text("Losses: " + losses);
-                    $("#currentNumber").text("  ");
+                    $("#currentNumber").text("try again");
                 }
                 totalPoints = 0;
             }
             $("#yourScore").text(totalPoints);
         }
 
-        $("#gem1").click(function() {
-            run_game(0);
-        });
-        $("#gem2").click(function() {
-            run_game(1);
-        });
-        $("#gem3").click(function() {
-            run_game(2);
-        });
-        $("#gem4").click(function() {
-            run_game(3);
+        $(".gemButton").click(function() {
+            run_game(parseInt(this.attributes.buttonValue.nodeValue));
         });
     </script>
 </body>
