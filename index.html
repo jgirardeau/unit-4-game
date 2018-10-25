@@ -35,7 +35,7 @@
         </div>
         <div class="row">
             <div class="col-md-3" id="currentScoreColor">
-                <p></p>
+                <h1 id="currentNumber"></h1>
             </div>
             <div class="col-md-2" id="winBoxColor">
                 <p>Wins: 0</p>
@@ -60,7 +60,7 @@
         </div>
         <div class="row">
             <div class="col-md-5 statusColor">
-                <h1>0</h1>
+                <h1 id="yourScore">0</h1>
             </div>
             <div class="col-md-7"></div>
         </div>
@@ -72,38 +72,37 @@
         var losses = 0;
         var totalPoints = 0;
         var computerGuess;
-        var gem1;
-        var gem2;
-        var gem3;
-        var gem4;
+        var gem = [];
 
         // generate random between 1 and max
         function make_random(max) {
             return Math.floor(Math.random() * (max - 1)) + 1;
         }
 
-        function init_game() {
-            computerGuess = make_random(102) + 19;
-            gem1 = make_random(12);
-            gem1 = make_random(12);
-            gem1 = make_random(12);
-            gem1 = make_random(12);
-
+        function run_game(indx) {
+            // start game
+            if (totalPoints == 0) {
+                computerGuess = make_random(102) + 18;
+                for (var i = 0; i < 4; i++) gem[i] = make_random(12);
+                $("#currentNumber").text(computerGuess);
+                console.log("start game ", computerGuess, " ", gem[0], " ", gem[1], " ", gem[2], " ", gem[3]);
+            }
+            // increment points
+            totalPoints += gem[indx];
+            $("#yourScore").text(totalPoints);
         }
 
         $("#gem1").click(function() {
-            if (totalPoints == 0) {
-                init_game();
-            }
+            run_game(0);
         });
         $("#gem2").click(function() {
-            alert("gem2");
+            run_game(1);
         });
         $("#gem3").click(function() {
-            alert("gem3");
+            run_game(2);
         });
         $("#gem4").click(function() {
-            alert("gem4");
+            run_game(3);
         });
     </script>
 </body>
